@@ -9,7 +9,426 @@
       {
         "title": "Data Flow",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 23,
+                "y": 212
+              },
+              "angle": 0,
+              "id": "4d39d223-4953-4931-aea0-f33242e6c138",
+              "z": 1,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Browser"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 385,
+                "y": 198
+              },
+              "angle": 0,
+              "id": "192bf2b1-4cc2-4517-8f46-0348905428fa",
+              "z": 2,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Unauthorized Access",
+                  "type": "Spoofing",
+                  "mitigation": "MFA",
+                  "description": "Password Spraying"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Flask App"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 800,
+                "y": 200
+              },
+              "angle": 0,
+              "id": "9d831d83-1332-4b9b-bfae-d8e97f49426e",
+              "z": 3,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Information Disclosure",
+                  "type": "Information disclosure",
+                  "mitigation": "Enforce user/group based access to files",
+                  "description": "Any user can access any file"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "File System"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 184,
+                "y": 254
+              },
+              "target": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "vertices": [
+                {
+                  "x": 257,
+                  "y": 307
+                },
+                {
+                  "x": 297,
+                  "y": 301
+                },
+                {
+                  "x": 307,
+                  "y": 296
+                }
+              ],
+              "id": "431fba1d-5c37-4e71-a2f4-553eb3a50457",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.40317078726435607,
+                    "offset": 2.8578997055685984
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Login Request",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "target": {
+                "id": "4d39d223-4953-4931-aea0-f33242e6c138"
+              },
+              "vertices": [
+                {
+                  "x": 388,
+                  "y": 325
+                },
+                {
+                  "x": 266,
+                  "y": 374
+                }
+              ],
+              "id": "6ae33b6a-0eda-40a4-9ed1-6f9f531032d7",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5242082300150923,
+                    "offset": 2.098319400681005
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Login Response",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "4d39d223-4953-4931-aea0-f33242e6c138"
+              },
+              "target": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "vertices": [
+                {
+                  "x": 251,
+                  "y": 250
+                },
+                {
+                  "x": 305,
+                  "y": 242
+                }
+              ],
+              "id": "57a6e538-d125-4f3a-863e-bf7a7845784c",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.503682237529333,
+                    "offset": -3.4347789728729645
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "File Request",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 7,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "9d831d83-1332-4b9b-bfae-d8e97f49426e"
+              },
+              "target": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "vertices": [
+                {
+                  "x": 694,
+                  "y": 314
+                },
+                {
+                  "x": 648,
+                  "y": 324
+                }
+              ],
+              "id": "438ec93e-9a36-402b-9fba-0c1466516490",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Return file contents",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 8,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "target": {
+                "id": "4d39d223-4953-4931-aea0-f33242e6c138"
+              },
+              "vertices": [
+                {
+                  "x": 321,
+                  "y": 180
+                }
+              ],
+              "id": "70babd90-0ffb-4470-901a-cf1c7c37b32c",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5194307533610332,
+                    "offset": 2.0786580858362247
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Display file content",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 9,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "192bf2b1-4cc2-4517-8f46-0348905428fa"
+              },
+              "target": {
+                "id": "9d831d83-1332-4b9b-bfae-d8e97f49426e"
+              },
+              "vertices": [
+                {
+                  "x": 630,
+                  "y": 183
+                },
+                {
+                  "x": 654,
+                  "y": 182
+                }
+              ],
+              "id": "23f0386a-a631-44d7-8abe-89e55cbf12df",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Read file by name",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 10,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 351,
+                "y": 142
+              },
+              "target": {
+                "x": 409,
+                "y": 394
+              },
+              "vertices": [
+                {
+                  "x": 345,
+                  "y": 256
+                }
+              ],
+              "id": "d3809f1d-3ee9-4e8e-aed7-27c12bb8b6ea",
+              "z": 11,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 752,
+                "y": 149
+              },
+              "target": {
+                "x": 830,
+                "y": 330
+              },
+              "vertices": [
+                {
+                  "x": 748,
+                  "y": 274
+                }
+              ],
+              "id": "5ef7f167-4813-4ce3-839c-1b0c4d0dccd9",
+              "z": 12,
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 963
+        }
       }
     ],
     "reviewer": "Me"
