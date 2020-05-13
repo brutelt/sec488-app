@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "title": "Sec488-App Threat Model",
+    "owner": "Me"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "Data Flow",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "Me"
+  }
+}
